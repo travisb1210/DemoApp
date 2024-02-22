@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="header.jsp" %>
-<%@ include file="footer.jsp" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
+	<%@ include file="header.jsp" %>
+	
 	<h1>Welcome home!</h1>
+	
+	<%@ include file="footer.jsp" %>
+	
 </body>
 </html>
