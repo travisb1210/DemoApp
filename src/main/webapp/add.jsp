@@ -9,7 +9,7 @@
 <body bgcolor="cyan">
 
 		<%@
-			page import="java.util.Date"
+			page import="java.util.*"
 		%>
 		
 		<%!
