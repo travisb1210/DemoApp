@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="header.jsp" %>
+<%@ include file="footer.jsp" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +12,7 @@
 </head>
 <body bgcolor="cyan">
 
+		
 		<%@
 			page import="java.util.*"
 		%>
@@ -15,11 +20,13 @@
 		<%!
 			//The above is a directive tag which is used for importing one or multiple Java packages that 
 			//may be used by the servlet
+			//In addition to the "@page" directive, there is also the "@include" and "@taglib" directives as well
 		
 			//This is a declaration block.
 			//It is used for creating seperate data or methods that is outside of the service 
 			//implementation
 			int i = 0;	
+			Date date = new Date();
 		%>
 		
 		<%
@@ -34,11 +41,19 @@
 			int sum =  num1 + num2;
 			
 			System.out.println("Inside add.jsp page");
-//			out.println("Output: " + sum); //Alternatively, the syntax on line 41 can be used to invoke the out.print method directly)
+//			out.println("Output: " + sum); //Alternatively, the JSP Expression syntax on line 42  can be used to invoke the out.print method directly)
 	 		
 		%>
 		
-		<%= "Output: " + sum %>
+		<%= "Output: " 
+			+ sum
+			+ "<br />" 
+			+ "Date is: " + date
+			+ "<br />"
+		    + "Integer value i is: " + i
+		%>
+		
+		
 
 </body>
 </html>
