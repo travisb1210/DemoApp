@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" errorPage="error.jsp"%>
 <%@ include file="header.jsp" %>
 <%@ include file="footer.jsp" %>
 
@@ -36,12 +36,17 @@
 				a Servlet equipped with a service method, request and response objects, and PrintWriter.
 				Therefore those objects are implicitly available when Java code is being written on a JSP page
 			*/
+			
+			if(request.getParameter("error") != null ) {
+				throw new Exception("Error has occurred");
+			}
+		
 			int num1 = request.getParameter("num1") != "" ? Integer.parseInt(request.getParameter("num1")) : 0;
 			int num2 = request.getParameter("num2") != "" ? Integer.parseInt(request.getParameter("num2")) : 0;
 			int sum =  num1 + num2;
 			
 			System.out.println("Inside add.jsp page");
-//			out.println("Output: " + sum); //Alternatively, the JSP Expression syntax on line 42  can be used to invoke the out.print method directly)
+//			out.println("Output: " + sum); //Alternatively, the JSP Expression syntax on line 53 can be used to invoke the out.print method directly)
 	 		
 		%>
 		
