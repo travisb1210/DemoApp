@@ -19,19 +19,19 @@ public class HomeServlet extends HttpServlet {
 		
 		String sessionCookieString = null;
 		
-		for(Cookie c: req.getCookies()) {
-			if(c.getName().equals("sessionCookie")) {
-				sessionCookieString = c.getValue();
-			}
-		}
-		
-		if(!sessionCookieString.equals(null)) {
-			System.out.println("Active session");
-		}else {
-			System.out.println("Booting server");
-			Cookie cookie = new Cookie("sessionCookie", "123");
-			res.addCookie(cookie);
-		}
+//		for(Cookie c: req.getCookies()) {
+//			if(c.getName().equals("sessionCookie")) {
+//				sessionCookieString = c.getValue();
+//			}
+//		}
+//		
+//		if(!sessionCookieString.equals(null)) {
+//			System.out.println("Active session");
+//		}else {
+//			System.out.println("Booting server");
+//			Cookie cookie = new Cookie("sessionCookie", "123");
+//			res.addCookie(cookie);
+//		}
 		
 		PrintWriter out = res.getWriter();
 		
@@ -111,7 +111,16 @@ public class HomeServlet extends HttpServlet {
 							
 						</form>
 					</div>
-				</div>
+					<div class="item">
+						<h2>Mapped to ModelView Servlet</h2>
+						
+						<form action="mvc" method="get">
+							
+							<input type="submit" value="Go to model view controller">
+							
+						</form>
+					</div>
+=				</div>
 						
 				</body>
 				</html>
@@ -181,6 +190,15 @@ public class HomeServlet extends HttpServlet {
 						<form action="postInfo" method="post">
 							
 							<input type="submit">
+							
+						</form>
+					</div>
+					<div class="item">
+						<h2>Mapped to ModelView Servlet</h2>
+						
+						<form action="mvc" method="get">
+							
+							<input type="submit" value="Go to model view controller">
 							
 						</form>
 					</div>
