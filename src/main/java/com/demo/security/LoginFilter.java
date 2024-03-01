@@ -35,11 +35,6 @@ public class LoginFilter extends HttpFilter implements Filter {
 	 */
 	public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-		String aString = "a";
-		if(aString.equals("b")) {
-			chain.doFilter(request, response);
-		}
-		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("pages/login.jsp");
 		requestDispatcher.forward(request, response);
 	}

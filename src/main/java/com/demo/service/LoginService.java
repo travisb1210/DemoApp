@@ -28,17 +28,20 @@ public class LoginService extends HttpServlet {
 		CredentialDAO dao = new CredentialDAO();
 		Credential cred = null;
 		
+		RequestDispatcher rDispatcher = req.getRequestDispatcher("/app");
+		
 		try {
 			cred = dao.getCredential(userName, password);
-		} catch (SQLException e) {
-			e.printStackTrace();
+			HttpSession session = req.getSession();
+			session.setAttribute("credential", cred);
+			
+			System.out.println("Establishing session");
+			rDispatcher.forward(req, res);
+		} catch (Exception e) {
+			System.out.println("FAILURE: " + e.getMessage());
+			rDispatcher = req.getRequestDispatcher("pages/login.jsp");
+			rDispatcher.forward(req, res);
 		}
-		
-		System.out.println("Establishing session");
-		HttpSession session = req.getSession();
-		session.setAttribute("credential", cred);
-		
-		RequestDispatcher rDispatcher = req.getRequestDispatcher("/DemoApp");
-		rDispatcher.forward(req, res);
+
 	}
 }

@@ -30,7 +30,7 @@ public class NotEmptyStringFilter extends HttpFilter implements Filter {
 			chain.doFilter(request, response);
 		}else {
 			System.out.println("var1/var2 is an empty string");
-			response.sendRedirect("/DemoApp");
+			response.sendRedirect("/DemoApp/app");
 		}
 		
 	}

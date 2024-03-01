@@ -34,7 +34,7 @@ public class LongEnoughFilter extends HttpFilter implements Filter {
 			chain.doFilter(request, response);
 		}else {
 			System.out.println("Var1 and Var2 are too short");
-			response.sendRedirect("/DemoApp");
+			response.sendRedirect("/DemoApp/app");
 		}
 	}
 
