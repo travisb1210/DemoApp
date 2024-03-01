@@ -83,6 +83,17 @@ public class HTML {
 								
 							</form>
 						</div>
+						<div class="item">
+							<h2>Mapped to Filter Demo Servlet</h2>
+							
+							<form action="filterDemo" method="get">
+								
+								<input type="text" name="var1">
+								<input type="text" name="var2">
+								<input type="submit" value="Go to filterDemo">
+								
+							</form>
+						</div>
 	=				</div>
 							
 					</body>
@@ -165,7 +176,17 @@ public class HTML {
 								
 							</form>
 						</div>
-					</div>
+						<div class="item">
+							<h2>Mapped to Filter Demo Servlet</h2>
+							
+							<form action="filterDemo" method="get">
+								
+								<input type="text" name="var1">
+								<input type="text" name="var2">
+								<input type="submit" value="Go to filterDemo">
+								
+							</form>
+						</div>
 							
 					</body>
 					</html>
